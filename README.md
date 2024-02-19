@@ -3,3 +3,7 @@ This assignment asked students to explore using Go's concurrency features (chann
 ## Implementation
 Two key packages used in both implementations are "github.com/gonum/stat/combin" and "github.com/sajari/regression". combin was utilized to create the variable combinations of 4 variables per combination. sajari/regression served as the foundation for the linear regression models.
 ## Without Concurrency
+## With Concurrency
+## Run Times & Performance
+- Without concurrency: go run linreg.go  1.14s user 0.27s system 119% cpu 1.177 total
+- With concurrency: go run linreg-concurrent.go  1.33s user 0.45s system 359% cpu 0.494 total
