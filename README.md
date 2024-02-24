@@ -7,5 +7,10 @@ Each program starts off with some data exploration prior to running the linear r
 ## Without vs With Concurrency
 One of the main challenges I found when implementing the program with concurrency was to make sure that the outputs were correctly grouped together for each run. My first few implementations would output the all possible combiantions at once, followed by the formulas with MSE, AIC, and BIC outputs dispersed throughout. To work around this, one of the biggest differences in the program utilizing concurrency makes use of struct to store a single iteration's combination, formula, MSE, AIC, and BIC. The output then occurs all at once, instead of printing line by line as information is calculated like the non-concurrent program.
 ## Run Times & Performance
-- Without concurrency: go run linreg.go  1.14s user 0.27s system 119% cpu 1.177 total
-- With concurrency: go run linreg-concurrent.go  1.33s user 0.45s system 359% cpu 0.494 total
+##### Without concurrency: 
+( for i in {1..100}; do; go run linreg.go; done; )  1.09s user 0.23s system 1% cpu 1:45.64 total
+- 
+##### With concurrency: 
+( for i in {1..100}; do; go run linreg-concurrent.go; done; )  1.38s user 0.47s system 3% cpu 47.624 total
+
+- 
