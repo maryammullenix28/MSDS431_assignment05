@@ -31,7 +31,12 @@ func main() {
 	}
 
 	//Data exploration
+	fmt.Println("-----------------------------------------------")
+	fmt.Println("-------------- DATA EXPLORATION ---------------")
+	fmt.Println("-----------------------------------------------")
 	fmt.Printf("The data set contains the following columns:%s\n", records[0])
+
+	//Calculate average of mv
 	totalPrice := 0.0
 	n := len(records) - 1
 	for i, record := range records {
@@ -50,7 +55,6 @@ func main() {
 		totalPrice += price
 	}
 
-	// Calculate the average house price
 	avgPrice := totalPrice / float64(n)
 	fmt.Printf("Average House Price (mv): %.2f\n\n", avgPrice)
 
@@ -59,7 +63,11 @@ func main() {
 
 	// Generate combinations of four or more explanatory variables
 	explanatoryCombinations := generateCombinations(variables[2:len(variables)-2], 4)
-	fmt.Printf("Number of combinations: %d\n", len(explanatoryCombinations))
+	fmt.Printf("Number of combinations: %d\n\n", len(explanatoryCombinations))
+
+	fmt.Println("-----------------------------------------------")
+	fmt.Println("----------------- COMBINATIONS ----------------")
+	fmt.Println("-----------------------------------------------")
 
 	// Iterate over each combination of explanatory variables
 	for _, combination := range explanatoryCombinations {
